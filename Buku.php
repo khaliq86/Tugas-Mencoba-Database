@@ -13,17 +13,6 @@ if (isset($_GET['id_buku'])) {
     header('Location: Buku.php');
 }
 
-if (isset($_GET['id_buku'])) {
-    $id = $_GET['id_buku'];
-    $nama = $_POST['nama'];
-    $nomor = $_POST['nomor'];
-    $alamat = $_POST['alamat'];
-    $tgl_terakhir_bayar = $_POST['tgl_terakhir_bayar'];
-
-    $buku->editMember($id, $nama, $nomor, $alamat, $tgl_terakhir_bayar);
-    header('Location: Buku.php');
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
