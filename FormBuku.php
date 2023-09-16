@@ -114,6 +114,9 @@ if (isset($_POST['update']) && isset($_POST['judul_buku']) && isset($_POST['penu
                         }
                         ?>
                     </td>
+                    <td>
+                        <a href="index.php">Kembali</a>
+                    </td>
                 </tr>
             </table>
         </form>
