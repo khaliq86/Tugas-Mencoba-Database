@@ -40,5 +40,13 @@ class model
         $result = mysqli_query($GLOBALS['koneksi'], $sql);
         return $result;
     }
+
+    //FUNCTION LOGIN
+    public function getUserData($username, $password)
+    {
+        $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+        $result = mysqli_query($GLOBALS['koneksi'], $sql);
+        return $result;
+    }
 }
 ?>

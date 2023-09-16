@@ -1,3 +1,16 @@
+<?php
+
+session_start();
+
+if ($_SESSION['is_login'] == 1) {
+    echo "<h1>Selamat Datang " . ucfirst($_SESSION['username']) . "</h1>";
+} else {
+    header("Location: LoginForm.php");
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,16 +35,20 @@
                     </td>
                 </tr>
             </table>
+            <button type="submit" name="logout">Log Out</button>
         </form>
-    </div>
-    <?php
-    if (isset($_POST['tambah-data-buku'])) {
-        header("Location: FormBuku.php");
-    }
-    if (isset($_POST['tampilkan-data-buku'])) {
-        header("Location: Buku.php");
-    }
-    ?>
+        <?php
+        if (isset($_POST['tambah-data-buku'])) {
+            header("Location: FormBuku.php");
+        }
+        if (isset($_POST['tampilkan-data-buku'])) {
+            header("Location: Buku.php");
+        }
+        if (isset($_POST['logout'])) {
+            session_destroy();
+            header("Location: LoginForm.php");
+        }
+        ?>
 </body>
 
 </html>
